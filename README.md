@@ -1,44 +1,27 @@
 # ChatGPT em Unity
 
-![2](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/51acba93-7d8e-493c-b7a8-d861e374e380)
-
-
-
-Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que combina a poderosa tecnologia do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente, desenvolvida especificamente para adolescentes e crianças. 🤖💬
+Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que une a poderosa tecnologia do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente, especialmente desenvolvida para adolescentes e crianças. 🤖💬
 
 ## Sobre o Projeto
-Depois de um mês de intenso trabalho e alguns obstáculos pelo caminho, estou empolgado para apresentar o início do meu ChatGPT em Unity. Imagine reviver aquela sensação nostálgica de conversar com o mago Merlin no prompt antigo do Windows 98. Com base nessa ideia, decidi criar um aplicativo de chat com o objetivo de proporcionar uma experiência divertida para o os adolescentes e jovens. 😄✨
+Após um mês de dedicação nesse projeto, enfrentando alguns obstáculos ao longo do caminho (a API da OpenAI bloqueando meu acesso sem motivo, sério?!), decidi não desistir e resolvi trocar de conta na OpenAI. E adivinha? O limite free para uso da API estava relacionado ao tempo de uso, não ao acesso em si. Ou seja, meu limite tinha estourado na conta antiga. Enfim, consegui utilizar uma nova chave disponível e um ID da organização gratuito também. 💪
 
-https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/c429c3c3-76cb-412c-a4a7-39c4a56d8ffb
+Mas chega de drama, vamos falar sobre o app. A minha ideia era criar algo para dispositivos móveis, direcionado para o público jovem, onde eles pudessem reviver aquela sensação nostálgica de conversar com o mago Merlin no antigo prompt do Windows 98 (lembram disso? rsrs). E assim, nasceu esse projeto.
 
 ## Principais Recursos
-- **Integração com a API da OpenAI**: Utilizando a API da OpenAI, o ChatGPT é capaz de gerar respostas interativas e envolventes, criando uma experiência de bate-papo única.
-- **Interface de Bate-Papo Interativa**: A interface de bate-papo foi projetada com cuidado para proporcionar uma experiência imersiva. Ela inclui grupos de layout horizontais e verticais, visualização de rolagem, botões interativos e elementos de layout personalizáveis.
-- **Planos para o Futuro**: Estamos planejando adicionar recursos avançados, como Text-To-Speech e Speech-To-Text, utilizando o Oculus SDK. Além disso, estamos trabalhando em um recurso para salvar o histórico de todas as conversas realizadas com o ChatGPT.
-- **Monetização Inteligente**: Para garantir a sustentabilidade do projeto, estamos explorando a possibilidade de usar o Activity Manager para rastrear a atividade do usuário. Após um determinado número de interações, os usuários terão a opção de assistir a um vídeo ou assinar o serviço para remover anúncios. Embora gostaríamos de oferecer o aplicativo gratuitamente, é importante respeitar os termos de uso da API da OpenAI para fins comerciais.
-  
-![mobileimgtela](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/3688d7b7-08fb-4823-bb45-4cef3f26512f)
+Basicamente, o que eu quis fazer foi chamar a API da OpenAI, integrar o ChatGPT no projeto (a parte que me deu duas semanas de tristeza) e configurar uma interface de bate-papo legal. Até agora, consegui implementar grupos de layout horizontal e vertical, visualização de rolagem, botão integrado com toda a lógica, elementos de layout personalizáveis e até mesmo um ajustador de tamanho de conteúdo. Tem um monte de outras coisas também, mas essas são as principais. 😄🚀
+
+Na próxima versão, estou planejando adicionar recursos de Text-To-Speech e Speech-To-Text ao projeto, utilizando o Oculus SDK. Além disso, quero implementar um recurso para salvar o histórico de todas as conversas que o usuário teve com o ChatGPT. Vai ficar ainda mais legal! 👍
+
+Ah, e não menos importante, vamos falar sobre monetização. Como a API da OpenAI não é gratuita para fins comerciais (queria que fosse, mas né...), estou pensando em usar o Activity Manager para rastrear a atividade do usuário. Depois de um certo número de interações no chat, eles terão que assistir a um vídeo ou assinar o serviço para remover os anúncios. Eu queria deixar tudo de graça, mas a vida é assim, precisamos nos sustentar. Para facilitar a monetização, vou integrar o novo sistema de Mediação de Anúncios da Unity. 💰💡
 
 ## Boas Práticas e Desafios
-No desenvolvimento do projeto, seguimos boas práticas de programação, como o uso de actions, unity events e headers. Nosso objetivo é garantir um código limpo e organizado. É importante destacar que o projeto está sempre em evolução e trabalharemos continuamente para aprimorar sua funcionalidade e experiência do usuário.
+No script do projeto, estou seguindo boas práticas de programação (você vai concordar comigo, né?! rsrs). Uso coisas legais como actions, unity events, headers e tudo mais. Eu sei, poderia comentar mais o código, mas fiz o meu melhor, juro! 😉💻
 
-Um dos principais desafios enfrentados foi elaborar o Callback para o botão de envio de mensagem. Nesse trecho de código, estabelecemos uma comunicação direta com o ChatGPT, um modelo de linguagem que gera respostas contextualizadas com base em um contexto fornecido. A função GetCompletionAsync é responsável por enviar a solicitação para o ChatGPT, incluindo as mensagens anteriores da conversa e outros parâmetros relevantes, como o modelo a ser utilizado e a temperatura de geração das respostas. As requisições humorísticas podem ser atribuídas ao algoritmo em constante aprendizado, que está evoluindo para fornecer respostas mais adequadas e personalizadas aos usuários.
+A maior dificuldade que enfrentei foi elaborar o Callback para o botão de envio de mensagem. Sinceramente, sem a ajuda do ChatGPT, eu não sairia do lugar nesse ponto. Nessa parte do código, o programa está se comunicando com o ChatGPT, que é um modelo de linguagem super inteligente capaz de gerar respostas com base em um contexto fornecido. A função GetCompletionAsync é responsável por enviar uma solicitação para o ChatGPT, contendo as mensagens anteriores da conversa e outros parâmetros relevantes, como o modelo a ser utilizado e a temperatura de geração das respostas. Quanto às respostas um tanto "humorísticas", ainda não descobri o motivo, mas talvez o algoritmo esteja aprendendo e se adaptando ao estilo de cada usuário. Vamos ver como ele se comporta! 😄💬
 
-
-https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/f7cec1c9-2f3e-470e-a341-816299d0e264
-
+Depois de enviar a solicitação, o programa fica aguardando a resposta do ChatGPT, que é recebida assincronamente (isso significa que, ao marcar a função como async e usar o await, o programa continua executando outras tarefas enquanto espera pela resposta da API. Nada de ficar travado!). Em seguida, tratamos a resposta e a exibimos ao usuário, geralmente em uma bolha de discussão. Essa interação de enviar uma mensagem, obter uma resposta e mostrá-la ao usuário é bem parecida com o processo de fazer uma pergunta a um assistente virtual e receber uma resposta. É assim que os chatbots e sistemas de processamento de linguagem natural funcionam, permitindo que os usuários se comuniquem de forma mais natural e obtenham respostas relevantes.
 
 ## Observações Importantes
-O projeto utiliza referências a chaves de API para autenticação, bem como IDs de organização e cliente da API da OpenAI. No entanto, essas informações foram projetadas para serem inseridas diretamente no Inspector da Unity, permitindo que você adicione suas próprias credenciais de autenticação. É fundamental lembrar que o acesso às chaves concede acesso à API, portanto, é necessário ter cuidado ao compartilhar ou utilizar essas informações em ambientes oficiais ou comerciais. Os usuários do aplicativo final não terão acesso direto a essas chaves, já que o acesso será realizado por meio da interface de usuário criada.
+Antes de finalizar, preciso deixar uma observação chave (sim, foi um trocadilho ruim, desculpa!): No script do projeto, as referências às chaves de API, ID da organização e Cliente da API da OpenAI foram feitas de forma que você, ao baixar e utilizar esse projeto, possa adicionar suas próprias informações. E mais importante ainda: quem tem acesso às chaves tem acesso à API, então, se você assinar um plano da API, não faz muito sentido colocar as chaves diretamente no script, né? É bem melhor fazer a referência direta no Inspector da Unity. Ah, e claro, os usuários do aplicativo final não terão acesso direto a essas chaves, pois eles acessarão através do front-end da UI que foi criada. Fiquem tranquilos! 😉
 
-## Contribuições e Agradecimentos
-Se você ficou animado com o projeto e deseja contribuir, fique à vontade para colaborar com código, sugestões de recursos e melhorias. 
-
-Acompanhe-nos nas redes sociais para ficar por dentro das últimas novidades e atualizações. Obrigado por fazer parte dessa jornada emocionante! 🚀😊
-
-## Contato
-Para mais informações ou dúvidas sobre o projeto, entre em contato pelo e-mail: marcelobrito.py@gmail.com
-
-
--------
-Nota: **Este projeto é um projeto particular do autor e tem fins educacionais. Não está associado ou endossado pela OpenAI.**
+Enfim, é isso. Vou continuar trabalhando nesse projeto nas próximas semanas e, quem sabe, fazer uma vaquinha online para ajudar a pagar a API (se alguém estiver disposto, rsrsrs). Fique de olho no projeto se você gostou! Valeu, galera! 🙌🔥
