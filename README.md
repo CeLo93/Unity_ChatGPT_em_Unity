@@ -1,4 +1,5 @@
 # ChatGPT em Unity
+![2](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/597b2d9b-75cb-4528-aeff-b57a1fd7fd55)
 
 Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que une a poderosa tecnologia do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente, especialmente desenvolvida para adolescentes e crianças. 🤖💬
 
@@ -6,6 +7,8 @@ Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que une a poderosa tecnol
 Após um mês de dedicação nesse projeto, enfrentando alguns obstáculos ao longo do caminho (a API da OpenAI bloqueando meu acesso sem motivo, sério?!), decidi não desistir e resolvi trocar de conta na OpenAI. E adivinha? O limite free para uso da API estava relacionado ao tempo de uso, não ao acesso em si. Ou seja, meu limite tinha estourado na conta antiga. Enfim, consegui utilizar uma nova chave disponível e um ID da organização gratuito também. 💪
 
 Mas chega de drama, vamos falar sobre o app. A minha ideia era criar algo para dispositivos móveis, direcionado para o público jovem, onde eles pudessem reviver aquela sensação nostálgica de conversar com o mago Merlin no antigo prompt do Windows 98 (lembram disso? rsrs). E assim, nasceu esse projeto.
+
+![mobileimgtela](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/8068b0a6-d3b8-4aa3-9de7-df5f4ce094d7)
 
 ## Principais Recursos
 Basicamente, o que eu quis fazer foi chamar a API da OpenAI, integrar o ChatGPT no projeto (a parte que me deu duas semanas de tristeza) e configurar uma interface de bate-papo legal. Até agora, consegui implementar grupos de layout horizontal e vertical, visualização de rolagem, botão integrado com toda a lógica, elementos de layout personalizáveis e até mesmo um ajustador de tamanho de conteúdo. Tem um monte de outras coisas também, mas essas são as principais. 😄🚀
