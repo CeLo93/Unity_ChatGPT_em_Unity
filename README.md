@@ -4,11 +4,21 @@
 
 Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que resolvi iniciar, onde une a poderosa API do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente feita em Unity, especialmente desenvolvida para adolescentes e crianças. 🤖💬
 
+
+# Contact <img align='center' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width='50"'>
+
+
+<a href="https://www.youtube.com/channel/UCvjn1p6Pny3f2StiLvwR2Cw" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
+<a href="https://instagram.com/m_brito93" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+<a href = "mailto:marcelobrito.py@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/marcelo-brito-9a0523280/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+
+
 ---------
 
 <div align="center">
-
-![2](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/597b2d9b-75cb-4528-aeff-b57a1fd7fd55)
+ 
+![2](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/1dc131c9-f11a-4a84-b09b-186b1cd1b7f2)
 
 </div>
 
@@ -17,44 +27,28 @@ Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que resolvi iniciar, onde
 ## Sobre o Projeto
 Após um mês de dedicação nesse projeto, enfrentando alguns obstáculos ao longo do caminho (tipo a API da OpenAI bloqueando meu acesso sem motivo, sério?!), decidi não desistir e resolvi trocar de conta na OpenAI. E adivinha? O limite free para uso da API estava relacionado ao tempo de uso, não ao acesso em si. Ou seja, meu limite tinha estourado na conta antiga. Enfim, consegui utilizar uma nova chave disponível e um ID da organização gratuito também. 💪
 
-![api](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/072ffc64-80ca-41ae-8b75-5e5f38b03ae6)
-
-<div align="center">
-
- 📸 Imagem 01 - Licença expirada 📸
-
-</div>
-
-------
-
-![apiok](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/3c8a3a20-7d89-4c67-8685-ab407a9856bd)
-
-<div align="center">
-
- 📸 Imagem 02 - Licença nova, da conta nova 📸
-
-</div>
-
--------
 
 Mas chega de drama, vamos falar sobre o app. A minha ideia era criar algo para dispositivos móveis, direcionado para o público jovem, onde eles pudessem reviver aquela sensação nostálgica de conversar com o mago Merlin no antigo prompt do Windows 98 (lembram disso? rsrs). E assim, nasceu esse projeto.  
 
 
 <div align="center">
+ 
+![mobileimgtela](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/52f50fe4-072b-4ff8-b592-8649c2a482c3)
 
-![mobileimgtela](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/8068b0a6-d3b8-4aa3-9de7-df5f4ce094d7)
 
 </div>
 
 <div align="center">
 
- 📸 Imagem 03 - Visão da tela em formato mobile 📸
+ 📸 Imagem 01 - Visão da tela em formato mobile 📸
 
 </div>
 
 ------
 
-https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/4193cc53-052a-41cb-a367-7444cfceb974
+
+https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/60e02cfa-b0ff-4efe-8b34-4e84f3dbf62a
+
 <div align="center">
 
  🎬 Video 01 - App PlayMode 🎬
@@ -69,7 +63,10 @@ Na próxima versão, estou planejando adicionar recursos de Text-To-Speech e Spe
 Ah, e não menos importante, vamos falar sobre monetização. Como a API da OpenAI não é gratuita para fins comerciais (queria que fosse, mas né...), estou pensando em usar o Activity Manager para rastrear a atividade do usuário. Depois de um certo número de interações no chat, eles terão que assistir a um vídeo ou assinar o serviço para remover os anúncios. Eu queria deixar tudo de graça, mas a vida é assim, precisamos nos sustentar. Para facilitar a monetização, vou integrar o novo sistema de Mediação de Anúncios da Unity. 💰💡
 
 
-https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/f0a9997a-a6b8-4c4a-a5ec-e220c62cd858
+
+https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/31891eb8-7400-4cb6-a3fd-38d371d44223
+
+
 <div align="center">
 
  🎬 Video 02 - Scroll da tela e conversa 🎬
@@ -93,8 +90,9 @@ Antes de finalizar, preciso deixar uma observação chave (sim, foi um trocadilh
 </div>
 
 <div align="center">
+ 
+![4](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/e55bf39b-29a3-4277-a5d4-9ae2d69d6c9e)
 
-![4](https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/77c13655-1ce1-41db-a29f-faa9079ce1ee)
 
 </div>
 
@@ -102,20 +100,12 @@ Antes de finalizar, preciso deixar uma observação chave (sim, foi um trocadilh
 
 <div align="center">
 
- 📸 Imagem 04 - Referências de autenticação no Inspector da Unity  📸
+ 📸 Imagem 02 - Referências de autenticação no Inspector da Unity  📸
 
 </div>
 
 ------
 
 Enfim, é isso. Vou continuar trabalhando nesse projeto nas próximas semanas e, quem sabe, fazer uma vaquinha online para ajudar a pagar a API (se alguém estiver disposto, rsrsrs). Fique de olho no projeto e, se você gostou, só entrar em contato com as minhas redes abaixo! Valeu! 🙌🔥
-
-# Contact <img align='center' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width='50"'>
-
-
-<a href="https://www.youtube.com/channel/UCvjn1p6Pny3f2StiLvwR2Cw" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
-<a href="https://instagram.com/m_brito93" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-<a href = "mailto:marcelobrito.py@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/marcelo-brito-9a0523280/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
 
