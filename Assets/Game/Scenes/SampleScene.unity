@@ -2482,9 +2482,9 @@ MonoBehaviour:
   inputField: {fileID: 1094016146}
   bubblesParent: {fileID: 676365097}
   apiKey:
-  - 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
+  -
   organizationId:
-  - org-HbEdmES0YKp8BsIuLuOrIuOI
+  -
 --- !u!1 &1537668203
 GameObject:
   m_ObjectHideFlags: 0
