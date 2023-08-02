@@ -5,7 +5,7 @@
 Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que resolvi iniciar, onde une a poderosa API do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente feita em Unity, especialmente desenvolvida para adolescentes e crianças. 🤖💬
 
 
-# Contact <img align='center' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width='20"'>
+# Contact 🖥️
 
 
 <a href="https://www.youtube.com/channel/UCvjn1p6Pny3f2StiLvwR2Cw" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
