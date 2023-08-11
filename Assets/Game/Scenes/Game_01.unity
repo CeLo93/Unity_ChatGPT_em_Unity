@@ -1124,7 +1124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0009765625}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &676365098
@@ -1661,7 +1661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 95}
+  m_AnchoredPosition: {x: 0, y: 96}
   m_SizeDelta: {x: 0, y: -179}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901294550
@@ -2482,7 +2482,7 @@ MonoBehaviour:
   inputField: {fileID: 1094016146}
   bubblesParent: {fileID: 676365097}
   apiKey:
-  - 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
+  - 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
   organizationId:
   - org-HbEdmES0YKp8BsIuLuOrIuOI
 --- !u!1 &1537668203
@@ -2825,7 +2825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 95}
+  m_AnchoredPosition: {x: 0, y: 96}
   m_SizeDelta: {x: 0, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859062709
