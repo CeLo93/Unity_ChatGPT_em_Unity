@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using Random = UnityEngine.Random;
 using OpenAI;
 using OpenAI.Chat;
+using System.Threading.Tasks;
+using System.IO;
+using Newtonsoft.Json;
+using UnityEngine.Networking;
+
+
+
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -71,14 +77,17 @@ public class DiscussionManager : MonoBehaviour
 
         try
         {
-            var result = await api.ChatEndpoint.GetCompletionAsync(request); // Envia a solicitação de chat para a API e aguarda a resposta
+            var result = await api.ChatEndpoint.GetCompletionAsync(request); // Aguardar a resposta da API
 
-            ChatPrompt chatResult = new ChatPrompt("system", result.FirstChoice.ToString()); // Cria um prompt de chat com a resposta do ChatGPT
+            ChatPrompt chatResult = new ChatPrompt("system", result.Choices[0].Message.Content); // Cria um prompt de chat com a resposta do ChatGPT
             chatPrompts.Add(chatResult); // Adiciona o prompt à lista de prompts de chat
 
-            onChatGPTMessageReceived?.Invoke(result.FirstChoice.ToString()); // Dispara o evento de nova mensagem do ChatGPT
+            onChatGPTMessageReceived?.Invoke(result.Choices[0].Message.Content); // Dispara o evento de nova mensagem do ChatGPT
 
-            CreateBubble(result.FirstChoice.ToString(), false); // Cria uma bolha de discussão para a resposta do ChatGPT
+            CreateBubble(result.Choices[0].Message.Content, false); // Cria uma bolha de discussão para a resposta do ChatGPT
+
+            // Grava a conversa em um arquivo
+            await GravarConversaEmArquivo(chatPrompts);
         }
         catch (Exception e)
         {
@@ -93,5 +102,27 @@ public class DiscussionManager : MonoBehaviour
         discussionBubble.Configure(message, isUserMessage); // Configura a mensagem da bolha de discussão
 
         onMessageReceived?.Invoke(); // Dispara o evento de nova mensagem recebida
+    }
+
+    // Grava a conversa em um arquivo JSON
+    private async Task GravarConversaEmArquivo(List<ChatPrompt> conversa)
+    {
+        try
+        {
+            // Serializa a conversa em formato JSON
+            string conversaJson = JsonConvert.SerializeObject(conversa);
+
+            // Caminho do arquivo
+            string caminhoArquivo = Path.Combine(Application.persistentDataPath, "conversa.json");
+
+            // Grava o JSON no arquivo
+            File.WriteAllText(caminhoArquivo, conversaJson);
+
+            Debug.Log("Conversa gravada em arquivo: " + caminhoArquivo);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Erro ao gravar conversa em arquivo: " + e);
+        }
     }
 }
