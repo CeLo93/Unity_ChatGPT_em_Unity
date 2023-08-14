@@ -2,7 +2,7 @@
 
 # *In Unity*
 
-Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que resolvi iniciar, onde une a poderosa API do ChatGPT da OpenAI com uma interface de bate-papo divertida e envolvente feita em Unity, especialmente desenvolvida para adolescentes e crianças. 🤖💬
+Bem-vindo(a) ao ChatGPT em Unity, um projeto inovador que combina a potente API do ChatGPT da OpenAI com uma envolvente interface de bate-papo desenvolvida em Unity. Esta aplicação visa entender os padrões e comportamentos das crianças, oferecendo análises comportamentais valiosas. 🤖💬
 
 
 ## 🌐 Socials <img align='center' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width="40"> :
@@ -25,10 +25,13 @@ Bem-vindo(a) ao ChatGPT em Unity, um projeto incrível que resolvi iniciar, onde
 
 
 ## Sobre o Projeto
-Após um mês de dedicação nesse projeto, enfrentando alguns obstáculos ao longo do caminho (tipo a API da OpenAI bloqueando meu acesso sem motivo, sério?!), decidi não desistir e resolvi trocar de conta na OpenAI. E adivinha? O limite free para uso da API estava relacionado ao tempo de uso, não ao acesso em si. Ou seja, meu limite tinha estourado na conta antiga. Enfim, consegui utilizar uma nova chave disponível e um ID da organização gratuito também. 💪
+Este projeto nasceu como parte do meu TCC da pós-graduação em IA e Machine Learning na PUC Minas. Com dedicação e determinação, enfrentei desafios técnicos, como a integração da API OpenAI e obstáculos de acesso. Minha visão é criar um "psicólogo intermediário" para adolescentes, usando a API da OpenAI de forma envolvente. As conversas são registradas em JSON e armazenadas no AWS S3. Um modelo de Machine Learning está sendo desenvolvido para entender o conteúdo das conversas, detectar sentimentos e fornecer insights aos profissionais de saúde.
+ 💪
 
 
-Mas chega de drama, vamos falar sobre o app. A minha ideia era criar algo para dispositivos móveis, direcionado para o público jovem, onde eles pudessem reviver aquela sensação nostálgica de conversar com o mago Merlin no antigo prompt do Windows 98 (lembram disso? rsrs). E assim, nasceu esse projeto.  
+Mas chega de drama, vamos falar sobre o app. A minha ideia é criar um ambiente que possa ser utilizado para uma espécie de "psicólogo" intermediário dos adolescentes. O que quero dizer é que a ideia aqui é utilizar a poderasa API da OpenAI (configurada para ser mais divertida possível) para interagir com as crianças. Todo o log de conversa é gravado em JSON e enviado para um armazenamento AWS S3. Estou desenvolvendo um modelo de Machine Learning para poder entender o conteúdo das conversas, detectar sentimentos e trazer sintomas para os profissionais da saúde. A ideia não é substituir o profissional, e sim ser o máximo assertivo no diagnóstico.
+
+É importante que haja um incentivo dos pais para o uso recorrente do software, pois todo o histórico é gravado e analisado progressivamente durante a vida da criança. Isso pode auxiliar em padrões não detectados nos individuos durante os anos.
 
 
 <div align="center">
@@ -55,12 +58,23 @@ https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/60e02cfa-b0ff-4efe-8b
 
 </div>
 
-## Principais Recursos
-Basicamente, o que eu quis fazer foi chamar a API da OpenAI, integrar o ChatGPT no projeto (a parte que me deu duas semanas de tristeza) e configurar uma interface de bate-papo legal. Até agora, consegui implementar grupos de layout horizontal e vertical, visualização de rolagem, botão integrado com toda a lógica, elementos de layout personalizáveis e até mesmo um ajustador de tamanho de conteúdo. Tem um monte de outras coisas também, mas essas são as principais. 😄🚀
+## Análise Comportamental Avançada
 
-Na próxima versão, estou planejando adicionar recursos de Text-To-Speech e Speech-To-Text ao projeto, utilizando o Oculus SDK. Além disso, quero implementar um recurso para salvar o histórico de todas as conversas que o usuário teve com o ChatGPT. Vai ficar ainda mais legal! 👍
+Um componente crucial é o desenvolvimento de um modelo de Machine Learning dedicado a entender o conteúdo das conversas. Isso permite a detecção de sentimentos e padrões ao longo do tempo. Esses insights podem ser extremamente valiosos para profissionais de saúde, ajudando-os a identificar possíveis sintomas e oferecer intervenções adequadas.
 
-Ah, e não menos importante, vamos falar sobre monetização. Como a API da OpenAI não é gratuita para fins comerciais (queria que fosse, mas né...), estou pensando em usar o Activity Manager para rastrear a atividade do usuário. Depois de um certo número de interações no chat, eles terão que assistir a um vídeo ou assinar o serviço para remover os anúncios. Eu queria deixar tudo de graça, mas a vida é assim, precisamos nos sustentar. Para facilitar a monetização, vou integrar o novo sistema de Mediação de Anúncios da Unity. 💰💡
+## Complementando o Diagnóstico Profissional
+
+Vale destacar que a aplicação não tem a pretensão de substituir profissionais de saúde. Pelo contrário, visa ser um instrumento assertivo para auxiliar no diagnóstico, complementando o trabalho dos especialistas. A análise de dados coletados ao longo do tempo pode proporcionar uma visão mais completa do progresso e comportamento da criança.
+
+## Importância da Participação dos Pais
+
+A participação e incentivo dos pais são essenciais para o sucesso da aplicação. O histórico de conversas é gravado e analisado progressivamente ao longo da vida da criança. Isso pode ser um recurso valioso para identificar padrões que podem não ser imediatamente perceptíveis, auxiliando no desenvolvimento saudável.
+
+
+## Próximos Passos
+
+Além das funcionalidades atuais, estamos planejando adicionar recursos avançados, como Text-To-Speech e Speech-To-Text através do Oculus SDK. Também estamos trabalhando na implementação de um recurso de histórico completo das conversas com o ChatGPT, proporcionando uma experiência mais enriquecedora.
+
 
 
 
@@ -74,15 +88,18 @@ https://github.com/CeLo93/ChatGPT_em_Unity/assets/92175791/31891eb8-7400-4cb6-a3
 </div>
 
 ## Boas Práticas e Desafios
-No script do projeto, estou seguindo boas práticas de programação (a gente tenta, né?! rsrs). Uso coisas legais como actions, unity events, headers e tudo mais. Eu sei, poderia comentar mais o código, mas fiz o meu melhor, juro! 😉💻
-
-A maior dificuldade que enfrentei foi elaborar o Callback para o botão de envio de mensagem. Sinceramente, sem a ajuda do ChatGPT, eu não sairia do lugar nesse ponto. Nessa parte do código, o programa está se comunicando com o ChatGPT, que é o modelo de linguagem  capaz de gerar respostas com base em um contexto fornecido. A função GetCompletionAsync é responsável por enviar uma solicitação para o ChatGPT, contendo as mensagens anteriores da conversa e outros parâmetros relevantes, como o modelo a ser utilizado e a temperatura de geração das respostas. Quanto às respostas um tanto "humorísticas", ainda não descobri o motivo, mas talvez o algoritmo esteja aprendendo e se adaptando ao estilo de cada usuário. Vou ver como ele se comporta com mais testes em outras chaves ou contas (vou precisar de mais números de celular para cadastro, caso use mais contas, rsrsrs!). 😄💬
+No desenvolvimento deste projeto, tenho buscado adotar boas práticas de programação para garantir a qualidade e a eficiência do código. Embora todos nós enfrentemos desafios, estou trabalhando para superá-los e entregar um produto sólido. Estou usando recursos como actions, unity events e headers para manter o código organizado e legível. Embora eu saiba que poderia ter incluído mais comentários, fiz o meu melhor para tornar o código compreensível. Espero que minha dedicação se reflita positivamente na experiência do usuário! 😉💻
 
 
-Depois de enviar a solicitação, o programa fica aguardando a resposta do ChatGPT, que é recebida assincronamente (isso significa que, ao marcar a função como async e usar o await, o programa continua executando outras tarefas enquanto espera pela resposta da API. Nada de ficar travado!). Em seguida, tratamos a resposta e a exibimos ao usuário, geralmente em uma bolha de discussão. Essa interação de enviar uma mensagem, obter uma resposta e mostrá-la ao usuário é bem parecida com o processo de fazer uma pergunta a um assistente virtual e receber uma resposta. É assim que os chatbots e sistemas de processamento de linguagem natural funcionam, permitindo que os usuários se comuniquem de forma mais natural e obtenham respostas relevantes.
+## Elaborando o Callback para o Botão de Envio de Mensagem
+Um dos maiores desafios que encontrei foi criar o Callback para o botão de envio de mensagem. Nesse ponto, a colaboração do ChatGPT foi crucial para me orientar. Essa parte do código envolve a comunicação com o ChatGPT, um modelo de linguagem capaz de gerar respostas contextuais. A função GetCompletionAsync desempenha um papel fundamental, enviando uma solicitação ao ChatGPT com mensagens anteriores da conversa e parâmetros relevantes, como o modelo a ser usado e a temperatura de geração das respostas. Quanto às respostas um tanto "humorísticas", ainda estou investigando essa peculiaridade. Pode ser que o algoritmo esteja aprendendo e se adaptando ao estilo de cada usuário. Planejo conduzir mais testes em diferentes chaves ou contas para entender melhor esse comportamento divertido e único! 😄💬
 
-## Observações Importantes
-Antes de finalizar, preciso deixar uma observação chave (sim, foi um trocadilho ruim, desculpa!): No script do projeto, as referências às chaves de API e ID da organização e Cliente da API da OpenAI foram feitas de forma que você, ao baixar e utilizar esse projeto, possa adicionar suas próprias informações. E mais importante ainda: quem tem acesso às chaves tem acesso à API, então, se você assinar um plano da API, não faz muito sentido colocar as chaves diretamente no script, né? É bem melhor fazer a referência direta no Inspector da Unity. Ah, e claro, os usuários do aplicativo final não terão acesso direto a essas chaves, pois eles acessarão através do front-end da UI que foi criada. Fiquem tranquilos! 😉
+## Processo de Comunicação Assíncrona
+Uma característica importante é a comunicação assíncrona com a API do ChatGPT. Ao marcar a função como async e usar o await, o programa pode continuar executando outras tarefas enquanto aguarda a resposta da API. Isso garante uma experiência fluida para o usuário, sem travamentos. Uma vez recebida a resposta do ChatGPT, o programa a trata e a exibe ao usuário, geralmente em uma bolha de discussão. Essa interação, que envolve enviar uma mensagem, receber uma resposta e apresentá-la ao usuário, é semelhante ao processo de conversar com um assistente virtual. É assim que os chatbots e sistemas de processamento de linguagem natural funcionam, permitindo uma comunicação mais natural e a obtenção de respostas relevantes.
+
+
+## Considerações Finais
+Antes de concluir, quero fazer uma observação importante (mesmo que seja um trocadilho ruim, peço desculpas!): No script do projeto, as referências às chaves de API, ID da organização e Cliente da API da OpenAI foram configuradas para que, ao baixar e utilizar este projeto, você possa facilmente adicionar suas próprias informações. É crucial lembrar que quem tem acesso a essas chaves tem acesso à API. Portanto, se você adquirir um plano da API, é mais seguro não inserir as chaves diretamente no script. É preferível fazer a referência direta no Inspector da Unity. Além disso, os usuários do aplicativo final não terão acesso direto a essas chaves, pois interagirão por meio da interface de usuário que foi desenvolvida. Isso garante a segurança dos dados e a integridade do projeto. Fiquem tranquilos! 😉
 
 
 </div>
