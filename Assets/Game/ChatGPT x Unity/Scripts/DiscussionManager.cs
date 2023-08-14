@@ -10,119 +10,182 @@ using System.IO;
 using Newtonsoft.Json;
 using UnityEngine.Networking;
 
-
-
-
 public class DiscussionManager : MonoBehaviour
 {
     [Header(" Elements ")]
-    [SerializeField] private DiscussionBubble bubblePrefab; // Prefab da bolha de discussão
-
-    [SerializeField] private TMP_InputField inputField; // Campo de entrada de texto para o usuário
-    [SerializeField] private Transform bubblesParent; // Pai das bolhas de discussão
+    [SerializeField] private DiscussionBubble bubblePrefab;
+    [SerializeField] private TMP_InputField inputField;
+    [SerializeField] private Transform bubblesParent;
 
     [Header(" Events ")]
-    public static Action onMessageReceived; // Evento disparado quando uma nova mensagem é recebida
-
-    public static Action<string> onChatGPTMessageReceived; // Evento disparado quando uma nova mensagem do ChatGPT é recebida
+    public static Action onMessageReceived;
+    public static Action<string> onChatGPTMessageReceived;
 
     [Header(" Authentication ")]
-    [SerializeField] private string[] apiKey; // Chave de API para autenticação
-    [SerializeField] private string[] organizationId; // ID da organização e Cliente da API do OpenAI
+    [SerializeField] private string[] apiKey;
+    [SerializeField] private string[] organizationId;
     private OpenAIClient api;
 
     [Header(" Settings ")]
-    [SerializeField] private List<ChatPrompt> chatPrompts = new List<ChatPrompt>(); // Lista de prompts de chat
+    [SerializeField] private List<ChatPrompt> chatPrompts = new List<ChatPrompt>();
 
-    private void Start()
+    private async void Start()
     {
-        CreateBubble("Hey There ! How can I help you ?", false); // Cria uma bolha de discussão inicial
-
-        Authenticate(); // Autentica o cliente da API
-
-        Initiliaze(); // Inicializa os prompts de chat
+        await InitializeChat();
+        CreateBubble("Olá! Me diga o que está sentindo hoje!", false);
     }
 
-    private void Update()
+    private async Task InitializeChat()
     {
+        try
+        {
+            Authenticate();
+            await LoadChatHistory(); // Carrega o histórico de conversas existentes
+            await InitializePrompts();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Erro na inicialização do chat: {e}");
+        }
     }
 
-    //! Autentica o cliente da API com a chave de API e ID da organização
+    private async Task LoadChatHistory()
+    {
+        try
+        {
+            string subfolder = "Conversas";
+            string jsonFileName = "conversa.json";
+            string subfolderPath = Path.Combine(Application.dataPath, subfolder);
+            string jsonFilePath = Path.Combine(subfolderPath, jsonFileName);
+
+            if (File.Exists(jsonFilePath))
+            {
+                string chatJson = File.ReadAllText(jsonFilePath);
+                chatPrompts = JsonConvert.DeserializeObject<List<ChatPrompt>>(chatJson);
+
+                // Remove a primeira fala do chat se ela for igual à mensagem inicial
+                if (chatPrompts.Count > 0 && chatPrompts[0].Content == "Oi! Sou o seu amigável assistente virtual! Estou aqui para te ajudar com qualquer pergunta ou conversa que você queira ter. Vamos nos divertir e aprender juntos, meu amigo! 😄🌈🚀")
+                {
+                    chatPrompts.RemoveAt(0);
+                }
+            }
+
+            Debug.Log("Histórico de conversas carregado com sucesso.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Erro ao carregar histórico de conversas: {e}");
+        }
+    }
+
     private void Authenticate()
     {
         api = new OpenAIClient(new OpenAIAuthentication(apiKey[0], organizationId[0]));
     }
 
-    //! Inicializa os prompts de chat
-    private void Initiliaze()
+    private async Task InitializePrompts()
     {
-        ChatPrompt prompt = new ChatPrompt("system", "You are a the best comedian in the world."); // Prompt de chat inicial
-        chatPrompts.Add(prompt); // Adiciona o prompt à lista de prompts de chat
+        try
+        {
+            // Prompt de chat inicial
+            string initialPromptContent = "Oi! Sou o seu amigável assistente virtual! " +
+                "Estou aqui para te ajudar com qualquer pergunta ou conversa que você queira ter. " +
+                "Vamos nos divertir e aprender juntos, meu amigo!";
+
+            // Se você precisa inicializar o chat com uma mensagem do sistema
+            ChatPrompt systemPrompt = new ChatPrompt("system", initialPromptContent);
+            chatPrompts.Add(systemPrompt);
+
+            // Aqui você pode adicionar mais prompts se necessário
+
+            Debug.Log("Chat inicializado com sucesso.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Erro na inicialização dos prompts de chat: {e}");
+        }
     }
 
-    //! Callback para o botão de envio de mensagem
     public async void AskButtonCallback()
     {
-        CreateBubble(inputField.text, true); // Cria uma bolha de discussão para a mensagem do usuário
-
-        ChatPrompt prompt = new ChatPrompt("user", inputField.text); // Cria um prompt de chat com a mensagem do usuário
-        chatPrompts.Add(prompt); // Adiciona o prompt à lista de prompts de chat
-
-        inputField.text = ""; // Limpa o campo de entrada de texto
-
-        ChatRequest request = new ChatRequest(
-            messages: chatPrompts,
-            model: OpenAI.Models.Model.GPT3_5_Turbo, // Modelo de chat usado (neste caso, GPT3.5 Turbo)
-            temperature: 0.2); // Temperatura para geração de respostas
+        // Lembre-se de tratar entradas vazias ou inválidas
+        if (string.IsNullOrWhiteSpace(inputField.text))
+            return;
 
         try
         {
-            var result = await api.ChatEndpoint.GetCompletionAsync(request); // Aguardar a resposta da API
+            string userMessage = inputField.text;
+            CreateBubble(userMessage, true);
+            chatPrompts.Add(new ChatPrompt("user", userMessage));
 
-            ChatPrompt chatResult = new ChatPrompt("system", result.Choices[0].Message.Content); // Cria um prompt de chat com a resposta do ChatGPT
-            chatPrompts.Add(chatResult); // Adiciona o prompt à lista de prompts de chat
+            inputField.text = "";
 
-            onChatGPTMessageReceived?.Invoke(result.Choices[0].Message.Content); // Dispara o evento de nova mensagem do ChatGPT
-
-            CreateBubble(result.Choices[0].Message.Content, false); // Cria uma bolha de discussão para a resposta do ChatGPT
-
-            // Grava a conversa em um arquivo
-            await GravarConversaEmArquivo(chatPrompts);
+            await ProcessAIResponse(); // Aguarda o processamento da resposta do AI
         }
         catch (Exception e)
         {
-            Debug.Log(e); // Exibe qualquer exceção ocorrida durante a solicitação de chat
+            Debug.LogError($"Erro ao interagir com o ChatGPT: {e}");
         }
     }
 
-    //! Cria uma bolha de discussão com a mensagem especificada
+    private async Task ProcessAIResponse()
+    {
+        try
+        {
+            ChatRequest request = new ChatRequest(
+                messages: chatPrompts,
+                model: OpenAI.Models.Model.GPT3_5_Turbo,
+                temperature: 0.2);
+
+            var result = await api.ChatEndpoint.GetCompletionAsync(request);
+
+            string aiResponse = result.Choices[0].Message.Content;
+            AddAIResponseToChat(aiResponse);
+            SaveChatToJson(chatPrompts); // Salva a conversa após receber resposta
+
+            // Pode ser útil enviar a conversa para o S3 aqui, após salvar localmente
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Erro ao interagir com o ChatGPT: {e}");
+        }
+    }
+
     private void CreateBubble(string message, bool isUserMessage)
     {
-        DiscussionBubble discussionBubble = Instantiate(bubblePrefab, bubblesParent); // Instancia uma bolha de discussão a partir do prefab
-        discussionBubble.Configure(message, isUserMessage); // Configura a mensagem da bolha de discussão
-
-        onMessageReceived?.Invoke(); // Dispara o evento de nova mensagem recebida
+        DiscussionBubble discussionBubble = Instantiate(bubblePrefab, bubblesParent);
+        discussionBubble.Configure(message, isUserMessage);
+        onMessageReceived?.Invoke();
     }
 
-    // Grava a conversa em um arquivo JSON
-    private async Task GravarConversaEmArquivo(List<ChatPrompt> conversa)
+    private void AddAIResponseToChat(string response)
+    {
+        chatPrompts.Add(new ChatPrompt("system", response));
+        onChatGPTMessageReceived?.Invoke(response);
+        CreateBubble(response, false);
+    }
+
+    private void SaveChatToJson(List<ChatPrompt> chat)
     {
         try
         {
-            // Serializa a conversa em formato JSON
-            string conversaJson = JsonConvert.SerializeObject(conversa);
+            string subfolder = "Conversas";
+            string jsonFileName = "conversa.json";
+            string subfolderPath = Path.Combine(Application.dataPath, subfolder);
 
-            // Caminho do arquivo
-            string caminhoArquivo = Path.Combine(Application.persistentDataPath, "conversa.json");
+            if (!Directory.Exists(subfolderPath))
+            {
+                Directory.CreateDirectory(subfolderPath);
+            }
 
-            // Grava o JSON no arquivo
-            File.WriteAllText(caminhoArquivo, conversaJson);
-
-            Debug.Log("Conversa gravada em arquivo: " + caminhoArquivo);
+            string jsonFilePath = Path.Combine(subfolderPath, jsonFileName);
+            string chatJson = JsonConvert.SerializeObject(chat, Formatting.Indented); // Formatação do JSON
+            File.WriteAllText(jsonFilePath, chatJson);
+            Debug.Log($"Conversa gravada em arquivo: {jsonFilePath}");
         }
         catch (Exception e)
         {
-            Debug.LogError("Erro ao gravar conversa em arquivo: " + e);
+            Debug.LogError($"Erro ao salvar conversa em arquivo JSON: {e}");
         }
     }
 }
