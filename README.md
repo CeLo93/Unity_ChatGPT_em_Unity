@@ -120,6 +120,8 @@ Antes de concluir, quero fazer uma observação importante (mesmo que seja um tr
 </div>
 
 ------
+Link Artigo no Drive: https://drive.google.com/file/d/15J1zMDFOeI08P6PUZcItjr8akWdcBCrW/view?usp=sharing
+
 
 Enfim, é isso. Vou continuar trabalhando nesse projeto nas próximas semanas e, quem sabe, fazer uma vaquinha online para ajudar a pagar a API (se alguém estiver disposto, rsrsrs). Fique de olho no projeto e, se você gostou, só entrar em contato com as minhas redes abaixo! Valeu!
 
