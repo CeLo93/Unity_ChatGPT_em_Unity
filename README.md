@@ -4,7 +4,7 @@
 
 Bem-vindo(a) ao ChatGPT em Unity, um projeto inovador que combina a potente API do ChatGPT da OpenAI com uma envolvente interface de bate-papo desenvolvida em Unity. Esta aplicação visa entender os padrões e comportamentos das crianças, oferecendo análises comportamentais valiosas. 🤖💬
 
-
+ 
 ## 🌐 Socials <img align='center' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width="40"> :
 
 
